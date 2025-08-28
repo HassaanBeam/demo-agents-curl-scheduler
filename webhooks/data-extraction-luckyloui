@@ -1,5 +1,5 @@
 #!/bin/bash
-curl --location 'https://api.beamstudio.ai/agent-tasks/7ab9db4e-fa43-4586-93cc-9828ee42dfa2/webhook/673d10f6-c66a-4728-8e56-dac2a16e08ca' \
+curl --location 'https://api.beamstudio.ai/agent-tasks/0baf47a6-99e3-4b91-a316-2dd21b5a0bcf/webhook/18b4a43f-95df-4db8-a2e7-0c2ddccea2ef' \
 --form 'task="{\"id\":\"19620727399a7e14\",\"messageId\":\"19620727399a7e14\",\"threadId\":\"19620727399a7e14\",\"labelIds\":[\"UNREAD\",\"CATEGORY_PERSONAL\",\"INBOX\"],\"snippet\":\"\",\"historyId\":\"198407\",\"internalDate\":1744301079000,\"headers\":{\"delivered-to\":\"service@beam.ai\",\"mime-version\":\"1.0\",\"from\":\"Hassaan Ahmed <hassaan.ahmed@beam.ai>\",\"date\":\"Thu, 10 Apr 2025 21:04:39 +0500\",\"subject\":\"Data Extraction\",\"to\":\"Service Agent <service@beam.ai>\",\"content-type\":\"multipart/mixed; boundary=\\\"000000000000022c7006326ebf44\\\"\"},\"attachments\":[{\"mimeType\":\"application/pdf\",\"fileName\":\"luckylouie_20240529_001.pdf\"}],\"textPlain\":\"\\r\\n\",\"textHtml\":\"<div dir=\\\"ltr\\\"><br></div>\\r\\n\",\"queryPrompt\":null,\"beamAgentOSTaskID\":\"0e8f4699-87b0-4417-81a7-1f9f44c1ac30\",\"timestamp\":\"2025-04-10T16:05:10Z\"}
 
 "' \
