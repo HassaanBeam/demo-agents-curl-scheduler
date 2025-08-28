@@ -1,0 +1,33 @@
+name: Webhook Scheduler
+
+on:
+  schedule:
+    - cron: '0 */2 * * 1-6'  # Every 2 hours, Monday-Saturday
+  workflow_dispatch: # Manual trigger for testing
+
+jobs:
+  run-webhooks:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Run all webhooks sequentially
+      run: |
+        echo "Starting webhook batch at $(date)"
+        
+        # Make webhook files executable
+        chmod +x webhooks/*.sh
+        
+        # Run each webhook file
+        for webhook in webhooks/*.sh; do
+          if [ -f "$webhook" ]; then
+            echo "Running $(basename $webhook)..."
+            bash "$webhook"
+            echo "✓ Completed $(basename $webhook)"
+            sleep 5  # 5 second pause between webhooks
+          fi
+        done
+        
+        echo "All webhooks completed at $(date)"
