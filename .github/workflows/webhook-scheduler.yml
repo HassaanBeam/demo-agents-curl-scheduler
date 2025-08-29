@@ -2,7 +2,7 @@ name: Webhook Scheduler
 
 on:
   schedule:
-    - cron: '0 */2 * * 1-6'  # Every 2 hours, Monday-Saturday
+    - cron: '0 0,4,8,12,16,20 * * 1-6'  # Every 4 hours: 12AM, 4AM, 8AM, 12PM, 4PM, 8PM
   workflow_dispatch: # Manual trigger for testing
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
         # Make webhook files executable
         chmod +x webhooks/*.sh
         
-        # Run each webhook file
+        # Run each webhook file with 5 second intervals
         for webhook in webhooks/*.sh; do
           if [ -f "$webhook" ]; then
             echo "Running $(basename $webhook)..."
